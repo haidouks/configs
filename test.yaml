@@ -1,0 +1,15 @@
+---
+anArray:
+- 1
+- 2
+- 3
+nested:
+  array:
+  - this
+  - is
+  - an
+  - array
+myKey: world
+---
+myKey2: document
+goodbye: world
