@@ -11,6 +11,7 @@ nested:
   - an
   - array
 myKey: world
+myKey5: asdasd
 ---
 myKey2: document
 goodbye: world
