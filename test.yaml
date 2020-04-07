@@ -2,6 +2,7 @@
 anArray:
 - 1
 - 2
+- 5
 nested:
   array:
   - this
