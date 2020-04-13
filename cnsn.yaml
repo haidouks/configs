@@ -1,12 +1,19 @@
-base: &base
-  name: Everyone has same name
+definitions: 
+  steps:
+    - step: &build-test
+        name: Build and test
+        script:
+          - mvn package
+        artifacts:
+          - target/**
+    - step: &deploy
+        name: Deploy
+        deployment: test
+        script:
+          - ./deploy.sh target/my-app.jar
 
-# The regexp << is called Merge Key Language-Independent Type. It is used to
-# indicate that all the keys of one or more specified maps should be inserted
-# into the current map.
-
-foo: *base
-  age: 10
-
-bar: *base
-  age: 20
+pipelines:
+  branches:
+    develop:
+      - step: *build-test
+      - step: *deploy
