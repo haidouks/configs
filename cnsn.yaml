@@ -1,19 +1,17 @@
-definitions: 
-  steps:
-    - step: &build-test
-        name: Build and test
-        script:
-          - mvn package
-        artifacts:
-          - target/**
-    - step: &deploy
-        name: Deploy
-        deployment: test
-        script:
-          - ./deploy.sh target/my-app.jar
+step: &build-test
+  name: Build and test
+  script:
+    - mvn package
+  artifacts:
+    - target/**
+step: &deploy
+  name: Deploy
+  deployment: test
+  script:
+    - ./deploy.sh target/my-app.jar
 
 pipelines:
   branches:
     develop:
-      - step: *build-test
-      - step: *deploy
+      - key1: *build-test
+      - key2: *deploy
