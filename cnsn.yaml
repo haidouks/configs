@@ -5,10 +5,8 @@ base: &base
 # indicate that all the keys of one or more specified maps should be inserted
 # into the current map.
 
-foo: &foo
-  <<: *base
+foo: *base
   age: 10
 
-bar: &bar
-  <<: *base
+bar: *base
   age: 20
