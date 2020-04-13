@@ -4,8 +4,4 @@ nested:
   - this
   - is
   - an
-  - array
 myKey: world
----
-myKey2: document
-goodbye: world
