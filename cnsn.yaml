@@ -14,5 +14,5 @@ definitions:
 pipelines:
   branches:
     develop:
-      - step: *build-test
-      - step: *deploy
+      - key1: *build-test
+      - key2: *deploy
